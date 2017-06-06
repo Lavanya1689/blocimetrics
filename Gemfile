@@ -20,6 +20,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'figaro'
 gem 'bootstrap-sass'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
@@ -29,4 +30,5 @@ group :development, :test do
   gem 'faker'
   gem 'factory_girl_rails'
   gem 'pry-rails'
+  gem 'letter_opener'
 end
