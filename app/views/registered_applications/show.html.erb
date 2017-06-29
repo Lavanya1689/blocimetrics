@@ -8,6 +8,13 @@
 <div class="row">
   <div class="col-md-8">
     <p><%= @registered_application.url %></p>
+    <h3> EVENTS </h3>
+    <small><%= @events.count %> events got created for this registration</small>
+      <% @registered_application.events.each do |e| %>
+        <ul>
+          <li><%= e.name %></li>
+        </ul>
+      <%end%>
   </div>
   <div class="col-md-4">
     <%= link_to "Edit", edit_registered_application_path, class: 'btn btn-success' %>
