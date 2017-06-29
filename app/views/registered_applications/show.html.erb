@@ -9,10 +9,9 @@
   <div class="col-md-8">
     <p><%= @registered_application.url %></p>
     <h3> EVENTS </h3>
-    <small><%= @events.count %> events got created for this registration</small>
-      <% @registered_application.events.each do |e| %>
+      <% @events.each do |ename, evalue| %>
         <ul>
-          <li><%= e.name %></li>
+          <li><%= ename %></li> count : <%= evalue.count %>
         </ul>
       <%end%>
   </div>

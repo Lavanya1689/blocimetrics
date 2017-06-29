@@ -16,6 +16,7 @@ class RegisteredApplicationsController < ApplicationController
     @registered_application = RegisteredApplication.new(registration_params)
 
     if @registered_application.save
+        binding.pry
       flash[:notice] = "Registration completed successfully"
       redirect_to @registered_application
     else
