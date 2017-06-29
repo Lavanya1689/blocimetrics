@@ -1,0 +1,19 @@
+<h1>EDIT Registration</h1>
+
+<div class="row">
+  <div class="col-md-8">
+    <%= form_for @registered_application do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "Enter name"%>
+      </div>
+      <div class="form-group">
+        <%= f.label :url %>
+        <%= f.text_area :url, rows: 1, class: 'form-control', placeholder: "Enter url"  %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Save", class: 'btn btn-success' %>
+      </div>
+    <%end%>
+  </div>
+</div>
