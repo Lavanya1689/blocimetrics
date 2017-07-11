@@ -1,5 +1,6 @@
 class API::EventsController < ApplicationController
 
+  skip_before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
   before_filter :set_access_control_headers
 
@@ -11,10 +12,11 @@ class API::EventsController < ApplicationController
 
    def create
      registered_application = RegisteredApplication.find_by(url: request.env['HTTP_ORIGIN'])
-
+     logger.info "Request==>#{request.inspect}"
      if registered_application
        event = Event.new(event_params)
-       if event.valid
+       event.registered_application = registered_application
+       if event.valid?
          event.save!
          render json: @event, status: :created
        else
